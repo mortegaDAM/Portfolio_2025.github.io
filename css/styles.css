@@ -1,79 +1,99 @@
 @font-face {
     font-family: 'mifuente';
-    src: url(/Font/Gidole-Regular.ttf) format('truetype');
+    src: url(../Font/Gidole-Regular.ttf) format('truetype');
 }
-
+*{
+    margin: 0;
+    padding: 0;
+    
+}
 body{
     font-family: 'mifuente';
-    color: dimgray;
+    color: white;
     text-align: center;
-    background-color: beige;
+    background-image: url(../img/fondo2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
-
-.barranav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #333;
-    padding: 15px 20px;
-    color: beige;
-    position: relative;
+h1{
+    padding:20px;
 }
-
-.logo {
-    position: absolute;
-    left: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
+header{
+    margin: auto;
+    width: 100%;
 }
-
-.nav-links {
+.nav{
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    text-align: center;
+    margin-bottom: 15px;
 }
-
-.nav-links li {
-    margin: 0;
-}
-
-.nav-links a {
-    color: beige;
+.nav li a{
     text-decoration: none;
-    font-size: 1.1em;
+    background-color:black;
+    color: white;
+    display: inline-block;
+    padding: 10px 15px;
+    
 }
-
-.menu-toggle {
-    display: none;
-    font-size: 1.4em;
-    cursor: pointer;
+.nav li a:hover{
+   /* background-color: white;
+    color: black; */
+    transform: scale(1.3,1.3);
 }
+.nav li{
+    display: inline-block;
+}
+footer{
+    margin-top: 20px;
+    background-color: black;
+    height: 10%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding-top: 10px;
+    align-items: center;
 
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        position:initial;
-        top: 60px;
-        right: 50%;
-        transform: translateX(50%);
-        background: #333;
-        width: 200px;
-        text-align: center;
-        display: none;
+}
+footer ul{
+     list-style: none;
+     display: flex;
+     justify-content: flex-end;
+     padding-top: 15px;
+     gap: 10px;
+     padding-right: 20px;
     }
-    .nav-links li {
-        margin: 15px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
+footer ul li{
+    display: inline-block;
+}
+footer li a{
+    display: block;
+}
+footer img{
+    height: 30px;
+    width: 30px;
+}
+footer li a:hover{
+    transform: scale(1.3,1.3);
+}
+section{
+    background-color:black;
+    color: white;
+    margin-left: 150px;
+    width:550px;
+    opacity: 0.5;
+    float: left;
+    padding: 10px;
+    margin-top: 75px;
+}
+aside{
+    background-color: black;
+    color: white;
+    margin-right: 150px;
+    width:550px;
+    opacity: 0.5;
+    float: right;
+    padding: 10px;
+    margin-top: 75px;
 }
