@@ -2,6 +2,10 @@
     font-family: 'mifuente';
     src: url(../Font/Gidole-Regular.ttf) format('truetype');
 }
+@font-face {
+    font-family: 'nav';
+    src: url(../Font/Iceland/Iceland-Regular.ttf) format('truetype');
+}
 
 * {
     margin: 0;
@@ -14,6 +18,7 @@ body {
     color: white;
     text-align: center;
     background-image: url(../img/fondo2.png);
+    background-position: center -60px;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -22,22 +27,33 @@ body {
     flex-direction: column;
 }
 
-h1 {
-    padding: 20px;
-}
 
 header {
+    margin-top: 20px;
     width: 100%;
     margin-bottom: 15px;
+    font-family: 'nav';
+    font-size: x-large;
 }
-
+.nombre{
+    
+    margin-left: 20px;
+    margin-right:auto;
+    padding: 10px 15px;
+}
 .nav {
     list-style: none;
-    text-align: center;
+    display: flex;
+    margin-right: 20px;
+    
 }
-
+.nav ul{
+    text-align: center;
+    
+}
 .nav li {
     display: inline-block;
+    
 }
 
 .nav li a {
@@ -47,10 +63,12 @@ header {
     display: inline-block;
     padding: 10px 15px;
     transition: transform 0.2s ease;
+    transform-origin: center;
+    
 }
 
 .nav li a:hover {
-    transform: scale(1.3, 1.3);
+    transform: scale(1.1);
 }
 
 /* CONTENEDOR PRINCIPAL */
@@ -76,7 +94,7 @@ section, aside {
 footer {
     background-color: black;
     color: white;
-    padding: 20px;
+    padding: 10px;
     width: 100%;
     text-align: center;
     margin-top: auto;
@@ -86,7 +104,7 @@ footer ul {
     list-style: none;
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 15px;
     padding: 10px 20px 0 0;
 }
 
@@ -96,8 +114,8 @@ footer li a {
 }
 
 footer img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     display: block;
 }
 
@@ -105,13 +123,6 @@ footer li a:hover {
     transform: scale(1.3, 1.3);
 }
 
-section:hover{
-    opacity:1;
-}
-aside:hover{
-    
-    opacity:1;
-}
 
 /* Tablet (<= 992px) */
 @media (max-width: 992px) {
