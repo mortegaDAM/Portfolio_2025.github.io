@@ -13,6 +13,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden; /* ✅ Evita scroll horizontal */
+}
+
 body {
     font-family: 'mifuente';
     color: white;
@@ -22,44 +26,37 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    min-height: 100vh;
-
-    flex-direction: column;
     display: grid;
-    grid-template-rows: auto 1fr auto; /* header | section | footer */
+    grid-template-rows: auto 1fr auto; /* header | main | footer */
     min-height: 100vh;
-    margin: 0;
 }
-
 
 header {
     margin-top: 20px;
     width: 100%;
-    
     font-family: 'nav';
     font-size: x-large;
 }
-.nombre{
-    margin-right:auto;
+
+.nombre {
+    margin-right: auto;
     padding: 0px 15px;
 }
-.nombre a:hover{
+
+.nombre a:hover {
     color: blueviolet;
     transform: scale(1,1);
 }
+
 .nav {
     list-style: none;
     display: flex;
     margin-right: 20px;
-    
+    flex-wrap: wrap; /* ✅ Para que se acomode si no cabe */
 }
-.nav ul{
-    text-align: center;
-    
-}
+
 .nav li {
     display: inline-block;
-    
 }
 
 .nav li a {
@@ -70,55 +67,62 @@ header {
     padding: 10px 15px;
     transition: transform 0.2s ease;
     transform-origin: center;
-    
 }
 
 .nav li a:hover {
     transform: scale(1.1);
 }
-section{
-    color: white;
-    float:left;
-    text-align: left;
-    margin-left: 30px;
-    height: 100%;
-    top: 0;
-    padding-top: 200px;
-}    
-.contenedor{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap; /* ✅ permite que se apilen en pantallas pequeñas */
-        padding: 0 30px;
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* ✅ Responsivo */
+    padding: 0 30px;
+    width: 100%;
+    max-width: 1200px; /* ✅ Evita que se estire demasiado */
+    margin: 0 auto;
+    gap: 20px;
 }
 
-h1{
+section {
+    color: white;
+    text-align: left;
+    width: 60%;
+    padding-top: 200px;
+}
+
+h1 {
     font-size: 50px;
 }
-h2{
+
+h2 {
     font-size: 25px;
     margin-bottom: 15px;
 }
-.logo{
+
+.logo {
     padding-top: 130px;
-    float: right;
-    padding-right: 50px;
+    text-align: right;
+    width: 35%;
 }
+
 .logo img {
     max-width: 100%;
     height: auto;
 }
-.boton{
+
+.boton {
     background-color: blueviolet;
     text-decoration: none;
     color: white;
     padding: 10px;
-    clear: both;
     display: inline-block;
     margin-top: 20px;
+    font-size: 18px;
 }
-.boton:hover{
+
+.boton:hover {
     background-color: white;
     color: blueviolet;
 }
@@ -155,31 +159,28 @@ footer li a:hover {
     transform: scale(1.3, 1.3);
 }
 
-
-
-/* RESPONSIVE MEDIA QUERIES*/
+/* ✅ Media Query: Tablet (<= 992px) */
 @media (max-width: 992px) {
     .contenedor {
-        flex-direction: column; /* ✅ apila sección y logo */
+        flex-direction: column;
         align-items: center;
+        gap: 20px;
     }
 
     section {
-        width: 90%; /* ✅ más ancho en tablet */
+        width: 90%;
         padding-top: 100px;
-        margin-left: 0; /* ✅ centrado automático */
-        float: none;
         text-align: center;
     }
 
     .logo {
-        float: none;
-        padding: 30px 0 0 0;
+        width: auto;
+        padding-top: 30px;
         text-align: center;
     }
 
     h1 {
-        font-size: 36px; /* ✅ menor tamaño en tablet */
+        font-size: 36px;
     }
 
     h2 {
@@ -199,25 +200,20 @@ footer li a:hover {
 /* ✅ Media Query: Móvil (<= 576px) */
 @media (max-width: 576px) {
     .contenedor {
-        flex-direction: column;
-        align-items: center;
         padding: 0 15px;
     }
 
     section {
         width: 100%;
         padding-top: 80px;
-        text-align: center;
-        margin-left: 0;
     }
 
     .logo {
-        padding: 20px 0 0 0;
-        text-align: center;
+        padding-top: 20px;
     }
 
     h1 {
-        font-size: 28px; /* ✅ más pequeño para móvil */
+        font-size: 28px;
     }
 
     h2 {
@@ -232,16 +228,10 @@ footer li a:hover {
 
     .nav {
         display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        justify-content: flex-start;
-        padding: 10px 0;
+        flex-wrap: wrap; /* ✅ Reemplaza el scroll */
+        justify-content: center;
         background-color: black;
-        scrollbar-width: none;
-    }
-
-    .nav::-webkit-scrollbar {
-        display: none;
+        padding: 10px 0;
     }
 
     .nav li {
