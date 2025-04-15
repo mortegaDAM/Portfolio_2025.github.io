@@ -23,23 +23,29 @@ body {
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
-    display: flex;
+
     flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* header | section | footer */
+    min-height: 100vh;
+    margin: 0;
 }
 
 
 header {
     margin-top: 20px;
     width: 100%;
-    margin-bottom: 15px;
+    
     font-family: 'nav';
     font-size: x-large;
 }
 .nombre{
-    
-    margin-left: 20px;
     margin-right:auto;
-    padding: 10px 15px;
+    padding: 0px 15px;
+}
+.nombre a:hover{
+    color: blueviolet;
+    transform: scale(1,1);
 }
 .nav {
     list-style: none;
@@ -70,27 +76,43 @@ header {
 .nav li a:hover {
     transform: scale(1.1);
 }
-
-/* CONTENEDOR PRINCIPAL */
-div {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 20px;
-    flex: 1; /* Para empujar el footer abajo */
-}
-
-section, aside {
-    background-color: black;
+section{
     color: white;
-    width: 550px;
-    opacity: 0.5;
+    float:left;
+    text-align: left;
+    margin-left: 30px;
+    height: 100%;
+    top: 0;
+    padding-top: 200px;
+    
+    
+}
+h1{
+    font-size: 50px;
+}
+h2{
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.logo{
+    padding-top: 130px;
+    float: right;
+    padding-right: 50px;
+}
+.boton{
+    background-color: blueviolet;
+    text-decoration: none;
+    color: white;
     padding: 10px;
+    clear: both;
+    display: inline-block;
     margin-top: 20px;
 }
+.boton:hover{
+    background-color: white;
+    color: blueviolet;
+}
 
-/* FOOTER */
 footer {
     background-color: black;
     color: white;
@@ -122,7 +144,6 @@ footer img {
 footer li a:hover {
     transform: scale(1.3, 1.3);
 }
-
 
 /* Tablet (<= 992px) */
 @media (max-width: 992px) {
