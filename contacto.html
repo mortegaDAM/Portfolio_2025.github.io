@@ -26,5 +26,70 @@
             </li>
         </ul>
     </header>
+    <div class="formulario">
+        <form action="https://formsubmit.co/mario98.mo@gmail.com" method="POST">
+            <fieldset>
+                <legend>Datos Personales</legend>
+        
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+        
+                <label for="apellidos">Apellidos:</label><br>
+                <input type="text" id="apellidos" name="apellidos" required><br><br>
+        
+                <label for="cp">Código Postal:</label><br>
+                <input type="text" id="cp" name="codigo_postal" pattern="[0-9]{5}" required><br><br>
+        
+                <label for="email">Correo Electrónico:</label><br>
+                <input type="email" id="email" name="email" required placeholder="example@example.com"><br><br>
+            </fieldset>
+            <div class="dobleform">
+                <fieldset>
+                    <legend>Motivo de Consulta</legend>
+        
+                    <label for="motivo">Selecciona un motivo:</label><br>
+                    <select id="motivo" name="motivo" required>
+                        <option value="" disabled selected>Seleccione</option>
+                        <option value="duda">Propuesta laboral</option>
+                        <option value="sugerencia">Problema técnico</option>
+                        <option value="problema">Trabaja conmigo</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Cómo me conociste</legend>
+        
+                    <label for="conocer">Selecciona una opción</label><br>
+                    <select id="conocer" name="conocer" required>
+                        <option value="" disabled selected>Seleccione</option>
+                        <option value="duda">Linkedin</option>
+                        <option value="sugerencia">Redes sociales</option>
+                        <option value="problema">Anuncios de google</option>
+                        <option value="problema">Recomendación</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </fieldset> 
+            </div>    
+            <fieldset>
+                <legend>Mensaje</legend>
+                <label for="mensaje"></label>
+                <textarea id="mensaje" name="mensaje" rows="6" cols="40" required placeholder="Escribe aquí tu mensaje..."></textarea>
+            </fieldset>
+            <button type="submit" class="boton">Enviar</button>
+        </form>
+    </div>
+    <footer>
+        <ul>
+            <li>
+                <a href="https://github.com/mortegaDAM" target="_blank"> <img src="img/github.png" alt="github"> </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/mario-ortega-navarro-898093198/" target="_blank"> <img src="img/linkedin.png" alt="linkedin"></a>
+            </li>
+            <li>
+                <a href="mailto:mario98.mo@gmail.com" target="_blank"><img src="img/gmail.png" alt="gmail"></a>
+            </li>
+        </ul>
+    </footer>
 </body>
 </html>
