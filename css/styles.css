@@ -201,6 +201,14 @@ footer li a:hover {
 .tarjetas:hover{
     transform: rotateY(180deg);
 }
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
 form{
     margin-top: 15px;
 }
@@ -358,9 +366,19 @@ legend{
       height: auto;
       padding: 30px 10px;
     }
+  
+    .tarjetas {
+      margin-top: 60px;
+    }
+  
+    footer ul {
+      justify-content: center;
+      padding-right: 0;
+    }
   }
 
-@media (max-width: 576px) {
+  @media (max-width: 576px) {
+    /* NAV */
     .nav {
       display: flex;
       overflow-x: auto;
@@ -384,6 +402,7 @@ legend{
       font-size: 13px;
     }
   
+    /* CONTENIDO PRINCIPAL */
     .contenedor {
       flex-direction: column;
       align-items: center;
@@ -417,15 +436,60 @@ legend{
       margin-top: 15px;
     }
   
-    .tarjetas {
-      width: 90%;
-      height: auto;
-      margin: 40px auto 0 auto;
+    /* TARJETAS SOBRE MI */
+    .main {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
     }
   
-    .cv .formacion, .cv .experiencia, .cv .habilidades {
+    .tarjetas {
+        width: 90%;
+        height: auto;
+        min-height: 200px;
+        margin: 0 auto;
+        position: relative;
+        transform-style: preserve-3d;
+        background-color: white;
+        border-radius: 15px;
+      }
+  
+    .cara {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        padding: 15px;
+    }
+  
+    .cara ul li {
+        font-size: 14px;
+        list-style: none;
+        margin: 10px 0;
+    }
+  
+    .frente {
+        font-size: 24px;
+    }
+  
+    .atras {
+        font-size: 14px;
+        transform: rotateY(180deg);
+    }
+  
+    /* SECCIÓN CV */
+    .cv .formacion,
+    .cv .experiencia,
+    .cv .habilidades {
       width: 90%;
       padding: 30px 10px;
+      height: auto;
     }
   
     .formacion .texto-default,
@@ -440,6 +504,18 @@ legend{
       font-size: 16px;
     }
   
+    /* FORMULARIO */
+    .dobleform {
+      flex-direction: column;
+      width: 100%;
+      gap: 20px;
+    }
+  
+    fieldset {
+      width: 90%;
+    }
+  
+    /* FOOTER */
     footer ul {
       justify-content: center;
       padding: 10px 0;
@@ -450,14 +526,9 @@ legend{
       height: 30px;
       width: 30px;
     }
-  
-    .dobleform {
-      flex-direction: column;
-      width: 100%;
-      gap: 20px;
-    }
-  
-    fieldset {
-      width: 90%;
-    }
+    #habilidades .texto-hover ul li {
+        font-size: 12px;
+        padding: 6px 10px;
+        margin: 4px;
+      }
   }
